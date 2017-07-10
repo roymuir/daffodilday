@@ -1,0 +1,15 @@
+.main-footer {
+	background: $black;
+	color: $white;
+	padding: 15px 0 5px 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+		}
+	}
+}

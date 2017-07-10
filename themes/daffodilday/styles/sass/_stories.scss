@@ -1,0 +1,43 @@
+.stories {
+	overflow: hidden;
+	padding: 0 30px;
+
+	.story {
+		position: relative;
+		min-height: 100px;
+		cursor: pointer;
+		text-align: center;
+		margin: 15px 0;
+
+		/* &:first-child,
+		&:nth-child(2) {
+			margin-top: 0;
+
+			@media (min-width: $screen-sm) {
+				margin-top: 15px;
+			}
+		} */
+
+		.front {
+			border: 1px solid #ccc;
+		}
+
+		.back {
+			border: 1px solid #ccc;
+			padding: 15px;
+		}
+
+		.story-title,
+		.story-content {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			margin: 0;
+		}
+
+		/* .story-content {
+			width: 100%;
+			padding: 15px;
+		} */
+	}
+}
