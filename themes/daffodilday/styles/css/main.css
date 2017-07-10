@@ -2252,6 +2252,15 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
+.button-container {
+  text-align: center; }
+  .button-container .button {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0 auto; }
+
 .desktop-menu {
   display: none; }
   @media (min-width: 768px) {
@@ -2343,10 +2352,16 @@ input[type="button"].btn-block {
 .section-title {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 25px; }
-  @media (min-width: 768px) {
-    .section-title {
-      margin-bottom: 50px; } }
+  margin-bottom: 25px;
+  /* @media (min-width: $screen-sm) {
+		margin-bottom: 25px;
+	} */ }
+
+.section-intro {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  max-width: 700px; }
 
 @media (min-width: 768px) {
   .section-content {

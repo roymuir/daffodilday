@@ -5,10 +5,19 @@ class HomePage extends Page
     private static $db = array(
     	'HeaderTitle' => 'Text',
     	'WhatTitle' => 'Text',
+    	'WhatIntro' => 'Text',
     	'WhatContent' => 'HTMLText',
     	'DifferenceTitle' => 'Text',
+    	'DifferenceIntro' => 'Text',
     	'DifferenceContent' => 'HTMLText',
-    	'SocialTitle' => 'Text'
+    	'MerchandiseTitle' => 'Text',
+    	'MerchandiseIntro' => 'Text',
+    	'MediaTitle' => 'Text',
+    	'MediaIntro' => 'Text',
+    	'SocialTitle' => 'Text',
+    	'SocialIntro' => 'Text',
+    	'ContactTitle' => 'Text',
+    	'ContactIntro' => 'Text'
     );
 
     private static $has_one = array(
@@ -42,12 +51,24 @@ class HomePage extends Page
 		$fields->addFieldToTab('Root.Header', $Stories);
 
 		$fields->addFieldToTab('Root.What Is Daffodil Day?', new TextField('WhatTitle', 'Title'));
+		$fields->addFieldToTab('Root.What Is Daffodil Day?', new TextareaField('WhatIntro', 'Intro'));
 		$fields->addFieldToTab('Root.What Is Daffodil Day?', new HTMLEditorField('WhatContent', 'Content'));
 
 		$fields->addFieldToTab('Root.How We Make A Difference', new TextField('DifferenceTitle', 'Title'));
+		$fields->addFieldToTab('Root.How We Make A Difference', new TextareaField('DifferenceIntro', 'Intro'));
 		$fields->addFieldToTab('Root.How We Make A Difference', new HTMLEditorField('DifferenceContent', 'Content'));
 
-		$fields->addFieldToTab('Root.Social Share', new TextField('SocialTitle', 'Title'));
+		$fields->addFieldToTab('Root.Merchandise', new TextField('MerchandiseTitle', 'Title'));
+		$fields->addFieldToTab('Root.Merchandise', new TextareaField('MerchandiseIntro', 'Intro'));
+
+		$fields->addFieldToTab('Root.Media', new TextField('MediaTitle', 'Title'));
+		$fields->addFieldToTab('Root.Media', new TextareaField('MediaIntro', 'Intro'));
+
+		$fields->addFieldToTab('Root.Social', new TextField('SocialTitle', 'Title'));
+		$fields->addFieldToTab('Root.Social', new TextareaField('SocialIntro', 'Intro'));
+
+		$fields->addFieldToTab('Root.Contact', new TextField('ContactTitle', 'Title'));
+		$fields->addFieldToTab('Root.Contact', new TextareaField('ContactIntro', 'Intro'));
 
 		return $fields;
 	}

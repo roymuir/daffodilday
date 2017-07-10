@@ -15,9 +15,16 @@
 	margin-top: 0;
 	margin-bottom: 25px;
 
-	@media (min-width: $screen-sm) {
-		margin-bottom: 50px;
-	}
+	/* @media (min-width: $screen-sm) {
+		margin-bottom: 25px;
+	} */
+}
+
+.section-intro {
+	font-size: 20px;
+	text-align: center;
+	margin: 0 auto 30px auto;
+	max-width: 700px;
 }
 
 @media (min-width: $screen-sm) {
