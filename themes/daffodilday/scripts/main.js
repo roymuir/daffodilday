@@ -87,6 +87,24 @@ $( document ).ready(function() {
 
 
 
+	// Gallery/Slider
+	$('.media-photos').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.media-photos-thumbnails'
+	});
+	$('.media-photos-thumbnails').slick({
+		infinite: true,
+		slidesToShow: 8,
+		slidesToScroll: 1,
+		asNavFor: '.media-photos',
+  		focusOnSelect: true
+	});
+
+
+
 	// Form validation
 	jQuery('#Form_Form').validate({
         rules: {

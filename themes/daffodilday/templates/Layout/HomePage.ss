@@ -60,6 +60,13 @@
 					    </li>
 					<% end_loop %>
 				</ul>
+				<ul class="media-photos-thumbnails">
+					<% loop MediaPhotos %>
+					    <li class="media-photo-thumbnail">
+					    	$SingleImage.CroppedImage(100,62.5)
+					    </li>
+					<% end_loop %>
+				</ul>
 			</div>
 			<div class="col-sm-3">
 				<h4>Listen to our radio appeals</h4>

@@ -29,9 +29,11 @@ class Page_Controller extends ContentController
         Requirements::javascript('https://code.jquery.com/jquery-3.2.1.min.js');
         Requirements::javascript('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js');
         Requirements::javascript('https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js');
+        Requirements::javascript('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.wall.1.8.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.1.6.1.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/main.js');
+        Requirements::css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
         Requirements::css($this->ThemeDir().'/styles/css/libs/dcsns_wall.css');
         Requirements::css($this->ThemeDir().'/styles/css/main.css');
     }
@@ -120,9 +122,6 @@ class Page_Controller extends ContentController
         $form->addErrorMessage('Message', 'Thanks! Your enquiry has been successfully sent.', 'good');
 
         $this->redirect('/#contact');
-        /*return array(
-            'Form' => ''
-        );*/
 
     }
 }
