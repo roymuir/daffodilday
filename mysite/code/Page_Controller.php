@@ -60,8 +60,8 @@ class Page_Controller extends ContentController
             new TextField('City'),
             new TextField('Postcode'),
             new TextareaField('WhatIsYourEnquiry', 'What is your enquiry?'),
-            $dropDown,
-            new RecaptchaField('ContactCaptcha')
+            $dropDown
+            //new RecaptchaField('ContactCaptcha')
         );
 
         $actions = new FieldList( 
@@ -87,13 +87,11 @@ class Page_Controller extends ContentController
     }
 
     public function submit($data, $form) { 
-        $email = new Email(); 
-
-        $email->setTo('roym@roymuir.com'); 
-        $email->setFrom($data['Email']); 
-        $email->setSubject("Contact Message from {$data["Name"]}"); 
-
-        $messageBody = " 
+        $adminEmail = new Email(); 
+        $adminEmail->setTo('roym@roymuir.com'); 
+        $adminEmail->setFrom($data['Email']); 
+        $adminEmail->setSubject("Contact Message from {$data["Name"]}"); 
+        $adminMessageBody = " 
             <p><strong>Name:</strong> {$data['Name']}</p> 
             <p><strong>Organisation:</strong> {$data['Organisation']}</p>
             <p><strong>Email:</strong> {$data['Email']}</p>
@@ -104,12 +102,27 @@ class Page_Controller extends ContentController
             <p><strong>Nearest region:</strong> {$data['NearestRegion']}</p>
             <p><strong>What is your enquiry:</strong> {$data['WhatIsYourEnquiry']}</p> 
         "; 
-        $email->setBody($messageBody); 
-        $email->send();
-        Director::redirectBack(); 
-        return array(
-            'Content' => '<p>Thank you for your feedback.</p>',
+        $adminEmail->setBody($adminMessageBody); 
+        $adminEmail->send();
+
+        $userEmail = new Email(); 
+        $userEmail->setTo("{$data["Email"]}"); 
+        $userEmail->setFrom('info@daffodilday.org.nz'); 
+        $userEmail->setSubject('Daffodil Day enquiry confirmation'); 
+        $userMessageBody = "
+            <p>Hi {$data["Name"]},</p>
+            <p>Thank you for your enquiry. One of our team will be in contact as soon as possible.</p>
+            <p>Thanks,<br>The Daffodil Day team.</p>
+        "; 
+        $userEmail->setBody($userMessageBody); 
+        $userEmail->send();
+
+        $form->addErrorMessage('Message', 'Thanks! Your enquiry has been successfully sent.', 'good');
+
+        $this->redirect('/#contact');
+        /*return array(
             'Form' => ''
-        );
+        );*/
+
     }
 }
