@@ -41,6 +41,47 @@
 	<div class="container">
 		<h1 class="section-title">$MediaTitle</h1>
 		<h2 class="section-intro">$MediaIntro</h2>
+		<h4>Watch our TV appeals</h4>
+		<ul class="media-videos row">
+			<% loop MediaVideos %>
+			    <li class="media-video col-sm-6">
+			    	<iframe width="560" height="315" src="$URL" frameborder="0" allowfullscreen></iframe>
+			    	$Description
+			    </li>
+			<% end_loop %>
+		</ul>
+		<div class="row">
+			<div class="col-sm-9">
+				<ul class="media-photos">
+					<% loop MediaPhotos %>
+					    <li class="media-photo">
+					    	$SingleImage.CroppedImage(800,500)
+					    	$Caption
+					    </li>
+					<% end_loop %>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<h4>Listen to our radio appeals</h4>
+				<ul class="media-radios">
+					<% loop MediaRadios %>
+						<li class="media-radio"><a href="$SingleMP3.URL">$Title</a></li>
+					<% end_loop %>
+				</ul>
+				<h4>Our media releases</h4>
+				<ul class="media-radios">
+					<% loop MediaReleases %>
+						<li class="media-release"><a href="$SinglePDF.URL">$Title</a></li>
+					<% end_loop %>
+				</ul>
+				<h4>Visit our links</h4>
+				<ul class="media-links">
+					<% loop MediaLinks %>
+						<li class="media-link"><a href="$URL" target="_blank">$Title</a></li>
+					<% end_loop %>
+				</ul>
+			</div>
+		</div>
 	</div>
 </section>
 <section id="social" class="section social">

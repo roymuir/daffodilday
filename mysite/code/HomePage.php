@@ -14,6 +14,7 @@ class HomePage extends Page
     	'MerchandiseIntro' => 'Text',
     	'MediaTitle' => 'Text',
     	'MediaIntro' => 'Text',
+    	'MediaEnquiries' => 'HTMLText',
     	'SocialTitle' => 'Text',
     	'SocialIntro' => 'Text',
     	'ContactTitle' => 'Text',
@@ -25,7 +26,12 @@ class HomePage extends Page
 	);
 
     private static $has_many = array(
-		'Stories' => 'Story'
+		'Stories' => 'Story',
+		'MediaVideos' => 'Video',
+		'MediaPhotos' => 'Photo',
+		'MediaRadios' => 'Radio',
+		'MediaReleases' => 'MediaRelease',
+		'MediaLinks' => 'Link'
 	);
 
     public function getCMSFields() {
@@ -36,7 +42,7 @@ class HomePage extends Page
 		$fields->addFieldToTab('Root.Header', new TextField('HeaderTitle', 'Title'));
 		$fields->addFieldToTab('Root.Header', $imageUploadField = new UploadField('BackgroundImage', 'Background Image'));
 		$imageUploadField->setFolderName('header-background');
-		$GFConfig = GridFieldConfig::create()->addComponents(
+		$StoryConfig = GridFieldConfig::create()->addComponents(
 			new GridFieldToolbarHeader(),
 			new GridFieldAddNewButton('toolbar-header-right'),
 			new GridFieldSortableHeader(),
@@ -47,7 +53,7 @@ class HomePage extends Page
 			new GridFieldDetailForm(),
 			new GridFieldOrderableRows('SortID')
 		);
-		$Stories = new GridField('Stories', 'Stories', $this->Stories(), $GFConfig);
+		$Stories = new GridField('Stories', 'Stories', $this->Stories(), $StoryConfig);
 		$fields->addFieldToTab('Root.Header', $Stories);
 
 		$fields->addFieldToTab('Root.What Is Daffodil Day?', new TextField('WhatTitle', 'Title'));
@@ -63,6 +69,72 @@ class HomePage extends Page
 
 		$fields->addFieldToTab('Root.Media', new TextField('MediaTitle', 'Title'));
 		$fields->addFieldToTab('Root.Media', new TextareaField('MediaIntro', 'Intro'));
+		$fields->addFieldToTab('Root.Media', new HTMLEditorField('MediaEnquiries', 'Media enquiries'));
+		$VideoConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaVideos = new GridField('MediaVideos', 'Videos', $this->MediaVideos(), $VideoConfig);
+		$fields->addFieldToTab('Root.Media', $MediaVideos);
+		$RadioConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaRadios = new GridField('MediaRadios', 'Radio appeals', $this->MediaRadios(), $RadioConfig);
+		$fields->addFieldToTab('Root.Media', $MediaRadios);
+		$MediaReleaseConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaReleases = new GridField('MediaReleases', 'Media releases', $this->MediaReleases(), $MediaReleaseConfig);
+		$fields->addFieldToTab('Root.Media', $MediaReleases);
+		$LinkConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaLinks = new GridField('MediaLinks', 'Links', $this->MediaLinks(), $LinkConfig);
+		$fields->addFieldToTab('Root.Media', $MediaLinks);
+		$PhotoConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaPhotos = new GridField('MediaPhotos', 'Photos', $this->MediaPhotos(), $PhotoConfig);
+		$fields->addFieldToTab('Root.Media', $MediaPhotos);
 
 		$fields->addFieldToTab('Root.Social', new TextField('SocialTitle', 'Title'));
 		$fields->addFieldToTab('Root.Social', new TextareaField('SocialIntro', 'Intro'));
