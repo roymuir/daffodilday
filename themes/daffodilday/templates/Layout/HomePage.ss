@@ -55,7 +55,7 @@
 				<ul class="media-photos">
 					<% loop MediaPhotos %>
 					    <li class="media-photo">
-					    	$SingleImage.CroppedImage(800,500)
+					    	$SingleImage.CroppedImage(807,500)
 					    	$Caption
 					    </li>
 					<% end_loop %>
@@ -63,7 +63,7 @@
 				<ul class="media-photos-thumbnails">
 					<% loop MediaPhotos %>
 					    <li class="media-photo-thumbnail">
-					    	$SingleImage.CroppedImage(100,62.5)
+					    	$SingleImage.CroppedImage(100,63)
 					    </li>
 					<% end_loop %>
 				</ul>
