@@ -10,6 +10,8 @@ $( document ).ready(function() {
 		$('.overlay').removeClass('overlay-open');
 	});
 
+
+
 	// Smooth scrolling links
 	$('.scroll-link').on('click', function (e) {
 	    e.preventDefault();
@@ -24,6 +26,8 @@ $( document ).ready(function() {
 	    });
 	});
     
+
+
     // Stories
 	if($('.stories').length) {
 		var storyWidth = $('.story').outerWidth();
@@ -41,6 +45,7 @@ $( document ).ready(function() {
 
 		$('.story').flip();
 	}
+
 
 
 	// Social stream
@@ -79,5 +84,43 @@ $( document ).ready(function() {
 			debug: true
 		});
 	}
+
+
+
+	// Form validation
+	jQuery('#Form_Form').validate({
+        rules: {
+            Name: 'required',
+            Email: {
+                required: true,
+                email: true
+            },
+            StreetAddress: 'required',
+            City: 'required',
+            Postcode: {
+                required: true,
+                digits: true,
+                rangelength: [4,4]
+            },
+            NearestRegion: 'required',
+            WhatIsYourEnquiry: 'required'
+        },
+        messages: {
+            Name: 'Please enter your name',
+            Email: {
+            	required: 'Please enter your email address',
+            	email: 'Please enter a valid email address'
+            },
+            StreetAddress: 'Please enter your street address',
+            City: 'Please enter your city',
+            Postcode:  {
+            	required: 'Please enter your postcode',
+            	digits: 'Please enter a valid postcode',
+            	rangelength: 'Please enter a valid postcode'
+            },
+			NearestRegion: 'Please select your nearest region',
+            WhatIsYourEnquiry: 'Please enter your enquiry',
+        }
+    });
 
 });

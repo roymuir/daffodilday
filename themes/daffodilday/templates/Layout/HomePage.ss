@@ -55,6 +55,6 @@
 	<div class="container">
 		<h1 class="section-title">$ContactTitle</h1>
 		<h2 class="section-intro">$ContactIntro</h2>
-		<div class="section-content">Contact form</div>
+		$Form
 	</div>
 </section>

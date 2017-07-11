@@ -11,3 +11,6 @@ SSViewer:
   theme: 'daffodilday'
 Debug:
   friendly_error_httpcode: true
+RecaptchaField:
+  public_api_key: '6LcIoigUAAAAALXKgEUjFQqLbJPI_QOUdH6QszwY'
+  private_api_key: '6LcIoigUAAAAAKCBO50jOKGuprOnUi2PCddAohZT'

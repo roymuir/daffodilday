@@ -11,7 +11,8 @@
 		"unclecheese/betterbuttons": "^1.3",
 		"silverstripe/userforms": "^4.3",
 		"silverstripe-australia/gridfieldextensions": "^1.4",
-		"gdmedia/ss-auto-git-ignore": "^1.0"
+		"gdmedia/ss-auto-git-ignore": "^1.0",
+		"silverstripe/recaptcha": "^2.0"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7@stable"

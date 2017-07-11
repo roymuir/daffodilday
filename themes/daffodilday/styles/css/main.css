@@ -2261,6 +2261,12 @@ input[type="button"].btn-block {
     padding: 10px 15px;
     margin: 0 auto; }
 
+input[type='text'],
+input[type='email'],
+textarea,
+select {
+  width: 100%; }
+
 .desktop-menu {
   display: none; }
   @media (min-width: 768px) {
