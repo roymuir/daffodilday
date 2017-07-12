@@ -27,7 +27,59 @@
 	<div class="container">
 		<h1 class="section-title">$DifferenceTitle</h1>
 		<h2 class="section-intro">$DifferenceIntro</h2>
-		<div class="section-content">$DifferenceContent</div>
+		<ul class="donations row">
+			<% loop Donations %>
+				<% if $Pos = 5 %>
+				    <li class="donation col-sm-4">
+						<div class="donation-value">$Value</div>
+						<div class="donation-description">$Description</div>
+					</li>
+				<% else_if $Pos = 6 %>
+					 <li class="donation col-sm-4">
+						<div class="donation-value">$Value</div>
+						<div class="donation-description">$Description</div>
+					</li>
+				<% else_if $Pos = 7 %>
+					 <li class="donation col-sm-4">
+						<div class="donation-value">$Value</div>
+						<div class="donation-description">$Description</div>
+					</li>	
+				<% else %>
+					<li class="donation col-sm-3">
+						<div class="donation-value">$Value</div>
+						<div class="donation-description">$Description</div>
+					</li>
+				<% end_if %>
+			<% end_loop %>
+		</ul>
+	</div>
+</section>
+<section id="involved" class="section involved">
+	<div class="container">
+		<h1 class="section-title">$InvolvedTitle</h1>
+		<h2 class="section-intro">$InvolvedIntro</h2>
+		<div class="opportunities">
+			<ul class="resp-tabs-list row">
+				<% loop opportunities %>
+					<% if First %>
+					    <li class="opportunity col-sm-2 col-sm-offset-1">
+							<div class="opportunity-icon">$Icon</div>
+							<div class="opportunity-title">$Title</div>
+						</li> 
+					<% else %>   
+						<li class="opportunity col-sm-2">
+							<div class="opportunity-icon">$Icon</div>
+							<div class="opportunity-title">$Title</div>
+						</li> 
+					<% end_if %>
+				<% end_loop %>
+			</ul>
+			<div class="resp-tabs-container">                                                        
+	            <% loop opportunities %>
+	            	<div>$Description</div>
+	            <% end_loop %>
+	        </div>
+        </div>
 	</div>
 </section>
 <section id="merchandise" class="section merchandise">
@@ -45,7 +97,9 @@
 		<ul class="media-videos row">
 			<% loop MediaVideos %>
 			    <li class="media-video col-sm-6">
-			    	<iframe width="560" height="315" src="$URL" frameborder="0" allowfullscreen></iframe>
+			    	<div class="video-container">
+			    		<iframe width="555" height="312" src="$URL" frameborder="0" allowfullscreen></iframe>
+			    	</div>
 			    	$Description
 			    </li>
 			<% end_loop %>
@@ -55,7 +109,7 @@
 				<ul class="media-photos">
 					<% loop MediaPhotos %>
 					    <li class="media-photo">
-					    	$SingleImage.CroppedImage(807,500)
+					    	$SingleImage.CroppedImage(847,530)
 					    	$Caption
 					    </li>
 					<% end_loop %>
@@ -76,7 +130,7 @@
 					<% end_loop %>
 				</ul>
 				<h4>Our media releases</h4>
-				<ul class="media-radios">
+				<ul class="media-releases">
 					<% loop MediaReleases %>
 						<li class="media-release"><a href="$SinglePDF.URL">$Title</a></li>
 					<% end_loop %>

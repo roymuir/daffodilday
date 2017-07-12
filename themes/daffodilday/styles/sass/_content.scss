@@ -1,3 +1,8 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .main-content {
 	padding: 15px 0;
 }
@@ -27,18 +32,44 @@
 	max-width: 700px;
 }
 
-@media (min-width: $screen-sm) {
-	.section-content {
+.section-content {
+	@media (min-width: $screen-sm) {
 		column-count: 2;
 		column-gap: 30px;
 	}
 }
 
-/* .is-table-row {
-    display: table;
+.media-videos,
+.media-photos,
+.media-photos-thumbnails,
+.media-radios,
+.media-releases,
+.media-links {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
 }
-.is-table-row [class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
-} */
+
+.media-video .video-container {
+	position: relative;
+	padding-bottom: 51.75%;
+	padding-top: 25px;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.media-photos-thumbnails {
+	display: none;
+
+	@media (min-width: $screen-sm) {
+		display: block;
+	}
+}

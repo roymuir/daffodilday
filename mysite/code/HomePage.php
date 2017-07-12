@@ -9,7 +9,8 @@ class HomePage extends Page
     	'WhatContent' => 'HTMLText',
     	'DifferenceTitle' => 'Text',
     	'DifferenceIntro' => 'Text',
-    	'DifferenceContent' => 'HTMLText',
+    	'InvolvedTitle' => 'Text',
+    	'InvolvedIntro' => 'Text',
     	'MerchandiseTitle' => 'Text',
     	'MerchandiseIntro' => 'Text',
     	'MediaTitle' => 'Text',
@@ -27,6 +28,8 @@ class HomePage extends Page
 
     private static $has_many = array(
 		'Stories' => 'Story',
+		'Donations' => 'Donation',
+		'Opportunities' => 'Opportunity',
 		'MediaVideos' => 'Video',
 		'MediaPhotos' => 'Photo',
 		'MediaRadios' => 'Radio',
@@ -62,7 +65,35 @@ class HomePage extends Page
 
 		$fields->addFieldToTab('Root.How We Make A Difference', new TextField('DifferenceTitle', 'Title'));
 		$fields->addFieldToTab('Root.How We Make A Difference', new TextareaField('DifferenceIntro', 'Intro'));
-		$fields->addFieldToTab('Root.How We Make A Difference', new HTMLEditorField('DifferenceContent', 'Content'));
+		$DifferenceConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$Donations = new GridField('Donations', 'Donation types', $this->Donations(), $DifferenceConfig);
+		$fields->addFieldToTab('Root.How We Make A Difference', $Donations);
+
+		$fields->addFieldToTab('Root.Get Involved', new TextField('InvolvedTitle', 'Title'));
+		$fields->addFieldToTab('Root.Get Involved', new TextareaField('InvolvedIntro', 'Intro'));
+		$OpportunitiesConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$Opportunities = new GridField('Opportunities', 'Ways to get involved', $this->Opportunities(), $OpportunitiesConfig);
+		$fields->addFieldToTab('Root.Get Involved', $Opportunities);
 
 		$fields->addFieldToTab('Root.Merchandise', new TextField('MerchandiseTitle', 'Title'));
 		$fields->addFieldToTab('Root.Merchandise', new TextareaField('MerchandiseIntro', 'Intro'));

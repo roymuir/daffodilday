@@ -48,6 +48,12 @@ $( document ).ready(function() {
 
 
 
+	// Get involved accordion
+
+	$('.opportunities').easyResponsiveTabs();
+
+
+
 	// Social stream
 	if($('#social-stream').length) {
 		$('#social-stream').dcSocialStream({
