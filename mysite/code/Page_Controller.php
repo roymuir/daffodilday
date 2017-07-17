@@ -18,7 +18,6 @@ class Page_Controller extends ContentController
      * @var array
      */
     private static $allowed_actions = array(
-        'Form'
     );
 
     public function init()
@@ -42,88 +41,5 @@ class Page_Controller extends ContentController
 
     public function copyrightDate() {
         return date("Y");
-    }
-
-    public function Form() { 
-        $dropDown = new DropdownField('NearestRegion', 'Nearest region', array(
-            'AklNth' => 'Auckland / Northland',
-            'WakBop' => 'Waikato / Bay of Plenty',
-            'Centra' => 'Central (Poverty Bay, Hawkes Bay, Taranaki, Manawatu &amp; Surrounds)',
-            'WelTas' => 'Wellington / Nelson / Tasman / Marlborough / Wairarapa',
-            'CanWes' => 'Canterbury / West Coast',
-            'OtaSth' => 'Otago / Southland'
-        ));
-        $dropDown->setEmptyString('-- Select one --');
-
-        $fields = new FieldList( 
-            new TextField('Name'),
-            new TextField('Organisation'), 
-            new EmailField('Email'), 
-            new TextField('Phone'),
-            new TextField('StreetAddress', 'Street address'),
-            new TextField('City'),
-            new TextField('Postcode'),
-            new TextareaField('WhatIsYourEnquiry', 'What is your enquiry?'),
-            $dropDown
-            //new RecaptchaField('ContactCaptcha')
-        );
-
-        $actions = new FieldList( 
-            new FormAction('submit', 'Submit') 
-        );
-
-        $validator = new RequiredFields(
-            'Name',
-            'Email',
-            'Phone',
-            'StreetAddress',
-            'City',
-            'Postcode',
-            'NearestRegion',
-            'WhatIsYourEnquiry'
-        );
-
-        $form = new Form($this, 'Form', $fields, $actions, $validator);
-
-        $form->setTemplate('ContactForm');
-
-        return $form;
-    }
-
-    public function submit($data, $form) { 
-        $adminEmail = new Email(); 
-        $adminEmail->setTo('roym@roymuir.com'); 
-        $adminEmail->setFrom($data['Email']); 
-        $adminEmail->setSubject("Contact Message from {$data["Name"]}"); 
-        $adminMessageBody = " 
-            <p><strong>Name:</strong> {$data['Name']}</p> 
-            <p><strong>Organisation:</strong> {$data['Organisation']}</p>
-            <p><strong>Email:</strong> {$data['Email']}</p>
-            <p><strong>Phone:</strong> {$data['Phone']}</p>
-            <p><strong>Street address:</strong> {$data['StreetAddress']}</p>
-            <p><strong>City:</strong> {$data['City']}</p>
-            <p><strong>Postcode:</strong> {$data['Postcode']}</p>
-            <p><strong>Nearest region:</strong> {$data['NearestRegion']}</p>
-            <p><strong>What is your enquiry:</strong> {$data['WhatIsYourEnquiry']}</p> 
-        "; 
-        $adminEmail->setBody($adminMessageBody); 
-        $adminEmail->send();
-
-        $userEmail = new Email(); 
-        $userEmail->setTo("{$data["Email"]}"); 
-        $userEmail->setFrom('info@daffodilday.org.nz'); 
-        $userEmail->setSubject('Daffodil Day enquiry confirmation'); 
-        $userMessageBody = "
-            <p>Hi {$data["Name"]},</p>
-            <p>Thank you for your enquiry. One of our team will be in contact as soon as possible.</p>
-            <p>Thanks,<br>The Daffodil Day team.</p>
-        "; 
-        $userEmail->setBody($userMessageBody); 
-        $userEmail->send();
-
-        $form->addErrorMessage('Message', 'Thanks! Your enquiry has been successfully sent.', 'good');
-
-        $this->redirect('/#contact');
-
     }
 }

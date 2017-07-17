@@ -49,8 +49,9 @@ $( document ).ready(function() {
 
 
 	// Get involved accordion
-
-	$('.opportunities').easyResponsiveTabs();
+	if($('.opportunities').length) {
+		$('.opportunities').easyResponsiveTabs();
+	}
 
 
 
@@ -94,57 +95,61 @@ $( document ).ready(function() {
 
 
 	// Gallery/Slider
-	$('.media-photos').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '.media-photos-thumbnails'
-	});
-	$('.media-photos-thumbnails').slick({
-		infinite: true,
-		slidesToShow: 8,
-		slidesToScroll: 1,
-		asNavFor: '.media-photos',
-  		focusOnSelect: true
-	});
+	if($('.media-photos').length) {
+		$('.media-photos').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.media-photos-thumbnails'
+		});
+		$('.media-photos-thumbnails').slick({
+			infinite: true,
+			slidesToShow: 8,
+			slidesToScroll: 1,
+			asNavFor: '.media-photos',
+	  		focusOnSelect: true
+		});
+	}
 
 
 
 	// Form validation
-	jQuery('#Form_Form').validate({
-        rules: {
-            Name: 'required',
-            Email: {
-                required: true,
-                email: true
-            },
-            StreetAddress: 'required',
-            City: 'required',
-            Postcode: {
-                required: true,
-                digits: true,
-                rangelength: [4,4]
-            },
-            NearestRegion: 'required',
-            WhatIsYourEnquiry: 'required'
-        },
-        messages: {
-            Name: 'Please enter your name',
-            Email: {
-            	required: 'Please enter your email address',
-            	email: 'Please enter a valid email address'
-            },
-            StreetAddress: 'Please enter your street address',
-            City: 'Please enter your city',
-            Postcode:  {
-            	required: 'Please enter your postcode',
-            	digits: 'Please enter a valid postcode',
-            	rangelength: 'Please enter a valid postcode'
-            },
-			NearestRegion: 'Please select your nearest region',
-            WhatIsYourEnquiry: 'Please enter your enquiry',
-        }
-    });
+	if($('#Form_Form').length) {
+		$('#Form_Form').validate({
+	        rules: {
+	            Name: 'required',
+	            Email: {
+	                required: true,
+	                email: true
+	            },
+	            StreetAddress: 'required',
+	            City: 'required',
+	            Postcode: {
+	                required: true,
+	                digits: true,
+	                rangelength: [4,4]
+	            },
+	            NearestRegion: 'required',
+	            WhatIsYourEnquiry: 'required'
+	        },
+	        messages: {
+	            Name: 'Please enter your name',
+	            Email: {
+	            	required: 'Please enter your email address',
+	            	email: 'Please enter a valid email address'
+	            },
+	            StreetAddress: 'Please enter your street address',
+	            City: 'Please enter your city',
+	            Postcode:  {
+	            	required: 'Please enter your postcode',
+	            	digits: 'Please enter a valid postcode',
+	            	rangelength: 'Please enter a valid postcode'
+	            },
+				NearestRegion: 'Please select your nearest region',
+	            WhatIsYourEnquiry: 'Please enter your enquiry',
+	        }
+	    });
+	}
 
 });

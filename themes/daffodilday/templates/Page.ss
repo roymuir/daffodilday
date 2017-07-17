@@ -3,7 +3,13 @@
 <% include Nav %>
 
 <div class="main-content" id="content">
-	$Layout
+	<% if $URLSegment == 'home' %>
+		$Layout
+	<% else %>
+		<div class="container">
+			$Layout
+		</div>
+	<% end_if %>
 </div>
 
 <% include Footer %>

@@ -14,3 +14,18 @@ Debug:
 RecaptchaField:
   public_api_key: '6LcIoigUAAAAALXKgEUjFQqLbJPI_QOUdH6QszwY'
   private_api_key: '6LcIoigUAAAAAKCBO50jOKGuprOnUi2PCddAohZT'
+---
+Name: payment
+After: 'framework/*','cms/*'
+---
+PaymentGateway:
+  environment:
+    'dev'
+PaymentProcessor:
+  supported_methods:
+    dev:
+      - 'Cheque'
+      - 'PaystationThreeParty'
+    live:
+      - 'Cheque'
+      - 'PaystationThreeParty'
