@@ -30,9 +30,10 @@ class Page_Controller extends ContentController
         Requirements::javascript('https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js');
         Requirements::javascript('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.wall.1.8.js');
-        Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.1.6.1.min.js');
+        Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.1.6.2.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/easyResponsiveTabs.js');
         Requirements::javascript($this->ThemeDir().'/scripts/main.js');
+        Requirements::css('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i');
         Requirements::css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
         Requirements::css($this->ThemeDir().'/styles/css/libs/dcsns_wall.css');
         Requirements::css($this->ThemeDir().'/styles/css/libs/easy-responsive-tabs.css');
@@ -42,4 +43,10 @@ class Page_Controller extends ContentController
     public function copyrightDate() {
         return date("Y");
     }
+
+    /*function TotalQuantItems() {
+        $quantitems = Session::get('Cart.OrderID');
+        $result = DB::query("SELECT SUM(Quantity) FROM Item WHERE OrderID LIKE $quantitems")->value();
+        return $result;
+    }*/
 }

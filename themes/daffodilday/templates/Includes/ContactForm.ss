@@ -34,7 +34,7 @@
 
 		<div class="form-row row">
 			<div class="form-field col-sm-6">
-				<label for="{$FormName}_StreetAddress">$Fields.dataFieldByName(StreetAddress).Title <span class="required">*</span></label>
+				<label class="form-label" for="{$FormName}_StreetAddress">$Fields.dataFieldByName(StreetAddress).Title <span class="required">*</span></label>
 				<div class="form-input">$Fields.dataFieldByName(StreetAddress)</div>
 			</div>
 			<div class="form-field col-sm-6">
@@ -54,21 +54,20 @@
 			</div>
 		</div>
 
-		<div class="form-row row">
+		<div class="form-row row last">
 			<div class="form-field col-sm-12">
 				<label class="form-label" for="{$FormName}_WhatIsYourEnquiry">$Fields.dataFieldByName(WhatIsYourEnquiry).Title <span class="required">*</span></label>
 				<div class="form-input">$Fields.dataFieldByName(WhatIsYourEnquiry)</div>
 			</div>
 		</div>
 
-		<div class="form-row row">
+		<div class="form-row row hidden">
 			<div class="form-field col-sm-12">
 				$Fields.dataFieldByName(SecurityID)
 				$Fields.dataFieldByName(ContactCaptcha)
 			</div>
 		</div>
 
-		<div class="clear"><!-- --></div>
 	</fieldset>
 
 	<% if $Actions %>

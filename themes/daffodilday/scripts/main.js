@@ -75,8 +75,7 @@ $( document ).ready(function() {
 				}
 			},
 			style: {
-				layout: 'modern',
-				colour: 'dark'
+				layout: 'modern'
 			},
 			wall: true,
 			rotate: {
@@ -139,6 +138,7 @@ $( document ).ready(function() {
 	            	required: 'Please enter your email address',
 	            	email: 'Please enter a valid email address'
 	            },
+	            Phone: 'Please enter your phone number',
 	            StreetAddress: 'Please enter your street address',
 	            City: 'Please enter your city',
 	            Postcode:  {

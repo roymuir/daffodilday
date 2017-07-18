@@ -153,10 +153,12 @@
 		<div id="social-stream"></div>
 	</div>
 </section>
-<section id="contact" class="section contact">
+<section id="contact" class="section contact bg">
 	<div class="container">
 		<h1 class="section-title">$ContactTitle</h1>
 		<h2 class="section-intro">$ContactIntro</h2>
-		$Form
+		<div class="col-sm-9 col-sm-offset-1-5">
+			$Form
+		</div>
 	</div>
 </section>

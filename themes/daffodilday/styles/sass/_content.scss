@@ -3,22 +3,36 @@ img {
 	height: auto;
 }
 
+.hidden {
+	display: none;
+}
+
 .main-content {
-	padding: 15px 0;
+	padding: 15px 0 80px 0;
+
+	@media (min-width: $screen-sm) {
+		padding: 15px 0 150px 0;
+	}
 }
 
 .section {
-	padding: 20px 0;
+	padding: 40px 0;
 
 	@media (min-width: $screen-sm) {
-		padding: 40px 0;
+		padding: 75px 0;
+	}
+
+	&.bg {
+		background-color: $lightPrimary;
 	}
 }
 
 .section-title {
+	font-size: 40px;
+	line-height: 60px;
 	text-align: center;
 	margin-top: 0;
-	margin-bottom: 25px;
+	margin-bottom: 17px;
 
 	/* @media (min-width: $screen-sm) {
 		margin-bottom: 25px;
@@ -27,8 +41,10 @@ img {
 
 .section-intro {
 	font-size: 20px;
+	font-weight: normal;
+	line-height: 30px;
 	text-align: center;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 58px auto;
 	max-width: 700px;
 }
 
@@ -71,5 +87,81 @@ img {
 
 	@media (min-width: $screen-sm) {
 		display: block;
+	}
+}
+
+.modern.light .stream li { 
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
+	&.dcsns-twitter a {
+		color: $primary;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	.section-thumb {
+		margin-bottom: 25px;
+
+		a {
+			display: block;
+
+			img {
+				float: none;
+				margin-bottom: 0;
+			}
+		}
+		
+	}
+
+	.section-text {
+		font-size: initial;
+		line-height: 24px;
+
+		.twitter-user a:hover strong {
+			color: $secondary !important;
+		}
+	}
+
+	.section-share {
+		text-align: center;
+		float: none;
+		margin-bottom: 25px;
+
+		a {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+	.socicon {
+		left: 20px;
+		bottom: 30px;
+		color: $white;
+	}
+
+	.section-intro {
+		background: $primary !important;
+		margin-bottom: 0;
+		padding: 15px 20px 15px 65px;
+		text-align: left;
+		line-height: initial;
+		max-width: none;
+
+		a,
+		span {
+			color: $white;
+			padding: 0;
+		}
+
+		.link-user {
+			font-size: 14px;
+			margin-bottom: 7px;
+		}
+
+		span {
+			font-size: 12px;
+		}
 	}
 }
