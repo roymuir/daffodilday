@@ -29,6 +29,7 @@ class Page_Controller extends ContentController
         Requirements::javascript('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js');
         Requirements::javascript('https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js');
         Requirements::javascript('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js');
+        Requirements::javascript('https://use.fontawesome.com/9744a1a4db.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.wall.1.8.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.1.6.2.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/easyResponsiveTabs.js');
@@ -43,10 +44,4 @@ class Page_Controller extends ContentController
     public function copyrightDate() {
         return date("Y");
     }
-
-    /*function TotalQuantItems() {
-        $quantitems = Session::get('Cart.OrderID');
-        $result = DB::query("SELECT SUM(Quantity) FROM Item WHERE OrderID LIKE $quantitems")->value();
-        return $result;
-    }*/
 }

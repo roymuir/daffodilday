@@ -4,45 +4,79 @@
 	@media (min-width: $screen-sm) {
 		margin-bottom: 26px;
 	}
+}
 
-	.form-label {
+.form-label,
+.field label,
+.userform label.left,
+.cart.sws .field label,
+.checkout.sws .field label,
+.security.sws .field label {
+	font-size: initial;
+	font-weight: normal;
+
+	span {
+		color: $secondary;
+	}
+}
+
+.form-input,
+.field,
+.cart.sws .field,
+.checkout.sws .field,
+.security.sws .field {
+	input[type='text'],
+	input[type='email'],
+	input[type='password'],
+	textarea,
+	select {
+		font-size: initial;
+		width: 100%;
+		border: 1px solid $lightGrey;
+		padding: 8px 10px 8px 10px;
+		border-radius: 0;
+		height: auto;
+
+	}
+
+	select {
+		padding: 7px 10px 8px 10px;
+	}
+
+	label.error {
+		font-size: 14px;
 		font-weight: normal;
-
-		span {
-			color: $secondary;
-		}
+		color: red;
 	}
+}
 
-	.form-input {
-		input[type='text'],
-		input[type='email'],
-		textarea,
-		select {
-			width: 100%;
-			border: 1px solid $lightGrey;
-			padding: 8px 10px 8px 10px;
-		}
+.security.sws .field {
+	input[type='text'],
+	input[type='email'],
+	input[type='password'] {
+		width: 100%;
+		max-width: 400px;
 
-		select {
-			padding: 7px 10px 8px 10px;
+		@media (min-width: $screen-sm) {
+			width: 35%;
 		}
+	}	
+}
 
-		label.error {
-			font-size: 14px;
-			font-weight: normal;
-			color: red;
-		}
-	}
+#ForgotPassword {
+	margin: 20px 0 0;
 }
 
 .message {
 	padding: 8px 35px 8px 14px;
     margin-bottom: 18px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.5); 
-    border: 1px solid #fbeed5;
+    border: 1px solid #bce8f1;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    color: #3a87ad;
+    background-color: #d9edf7;
 
     &.good {
     	background-color: #dff0d8;
@@ -55,4 +89,62 @@
     	border-color: #fbeed5;
     	color: #c09853;
     }
+}
+
+.userform {
+	.userformsgroup {
+	    border: none;
+	    border-radius: 0;
+	    padding: 0;
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+
+	.field > .field .field {
+		margin-bottom: 26px;
+	}
+
+	legend {
+		font-size: initial;
+		font-weight: normal !important;
+		border-bottom: none;
+	}
+
+	fieldset.optionset {
+		list-style: none;
+		margin: 0;
+
+		.optionset {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			li {
+
+				* {
+					display: inline-block;
+					margin-right: 5px;
+					vertical-align: top;
+				}
+
+				label {
+					width: 90%;
+				}
+
+				input {
+					margin-top: 6px;
+				}
+			}
+		}
+	}
+
+	span.required {
+		display: none;
+	}
+
+	.requiredField span.required {
+		display: inline;
+		margin-left: 3px;
+	}
 }

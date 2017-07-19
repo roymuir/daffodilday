@@ -23,31 +23,32 @@
 		<div class="section-content">$WhatContent</div>
 	</div>
 </section>
-<section id="how" class="section how">
+<section id="how" class="section how bg">
 	<div class="container">
 		<h1 class="section-title">$DifferenceTitle</h1>
 		<h2 class="section-intro">$DifferenceIntro</h2>
 		<ul class="donations row">
 			<% loop Donations %>
 				<% if $Pos = 5 %>
-				    <li class="donation col-sm-4">
-						<div class="donation-value">$Value</div>
-						<div class="donation-description">$Description</div>
-					</li>
-				<% else_if $Pos = 6 %>
-					 <li class="donation col-sm-4">
-						<div class="donation-value">$Value</div>
-						<div class="donation-description">$Description</div>
+				    <li class="col-sm-4 col-md-3 col-md-offset-1-5">
+				    	<div class="donation">
+							<div class="donation-value">$Value</div>
+							<div class="donation-description">$Description</div>
+						</div>
 					</li>
 				<% else_if $Pos = 7 %>
-					 <li class="donation col-sm-4">
-						<div class="donation-value">$Value</div>
-						<div class="donation-description">$Description</div>
-					</li>	
+				    <li class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-0">
+				    	<div class="donation">
+							<div class="donation-value">$Value</div>
+							<div class="donation-description">$Description</div>
+						</div>
+					</li>
 				<% else %>
-					<li class="donation col-sm-3">
-						<div class="donation-value">$Value</div>
-						<div class="donation-description">$Description</div>
+					<li class="col-sm-4 col-md-3">
+				    	<div class="donation">
+							<div class="donation-value"><span>$</span>$Value</div>
+							<div class="donation-description">$Description</div>
+						</div>
 					</li>
 				<% end_if %>
 			<% end_loop %>
@@ -58,21 +59,18 @@
 	<div class="container">
 		<h1 class="section-title">$InvolvedTitle</h1>
 		<h2 class="section-intro">$InvolvedIntro</h2>
-		<div class="opportunities">
-			<ul class="resp-tabs-list row">
-				<% loop opportunities %>
-					<% if First %>
-					    <li class="opportunity col-sm-2 col-sm-offset-1">
-							<div class="opportunity-icon">$Icon</div>
-							<div class="opportunity-title">$Title</div>
+		<div id="getinvolved" class="opportunities">
+			<ul class="resp-tabs-list">
+				<div class="row">
+					<% loop opportunities %>
+						<li class="col-sm-2-4">
+					    	<div class="opportunity">
+						    	<i class="opportunity-icon fa fa-$Icon"></i>
+								<div class="opportunity-title">$Title</div>
+							</div>
 						</li> 
-					<% else %>   
-						<li class="opportunity col-sm-2">
-							<div class="opportunity-icon">$Icon</div>
-							<div class="opportunity-title">$Title</div>
-						</li> 
-					<% end_if %>
-				<% end_loop %>
+					<% end_loop %>
+				</div>
 			</ul>
 			<div class="resp-tabs-container">                                                        
 	            <% loop opportunities %>
@@ -84,15 +82,62 @@
 </section>
 <section id="merchandise" class="section merchandise">
 	<div class="container">
+		<hr>
 		<h1 class="section-title">$MerchandiseTitle</h1>
 		<h2 class="section-intro">$MerchandiseIntro</h2>
-		<div class="button-container"><a class="button primary" href="#">Visit Store</a></div>
+		<div class="button-container"><a class="button secondary" href="/store">Visit Store</a></div>
+	</div>
+</section>
+<section id="social" class="section social bg">
+	<div class="container">
+		<h1 class="section-title">$SocialTitle</h1>
+		<h2 class="section-intro">$SocialIntro</h2>
+		<%-- <div class="section-content"></div> --%>
+		<div id="social-stream"></div>
 	</div>
 </section>
 <section id="media" class="section media">
 	<div class="container">
 		<h1 class="section-title">$MediaTitle</h1>
 		<h2 class="section-intro">$MediaIntro</h2>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="media-container secondary">
+					<h4>Media enquiries</h4>
+					<div class="media-enquiries">
+						$MediaEnquiries
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="media-container primary">
+					<h4>Our media releases</h4>
+					<ul class="media-releases">
+						<% loop MediaReleases %>
+							<li class="media-release"><a href="$SinglePDF.URL">$Title</a></li>
+						<% end_loop %>
+					</ul>
+				</div>
+				<div class="media-container primary">
+					<h4>Visit our links</h4>
+					<ul class="media-links">
+						<% loop MediaLinks %>
+							<li class="media-link"><a href="$URL" target="_blank">$Title</a></li>
+						<% end_loop %>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="media-container primary">
+					<h4>Listen to our radio appeals</h4>
+					<ul class="media-radios">
+						<% loop MediaRadios %>
+							<li class="media-radio"><a href="$SingleMP3.URL">$Title</a></li>
+						<% end_loop %>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<h4>Watch our TV appeals</h4>
 		<ul class="media-videos row">
 			<% loop MediaVideos %>
@@ -100,12 +145,13 @@
 			    	<div class="video-container">
 			    		<iframe width="555" height="312" src="$URL" frameborder="0" allowfullscreen></iframe>
 			    	</div>
-			    	$Description
+			    	<div class="video-description">$Description</div>
 			    </li>
 			<% end_loop %>
 		</ul>
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-9 col-sm-offset-1-5">
+				<h4>View our gallery</h4>
 				<ul class="media-photos">
 					<% loop MediaPhotos %>
 					    <li class="media-photo">
@@ -122,35 +168,7 @@
 					<% end_loop %>
 				</ul>
 			</div>
-			<div class="col-sm-3">
-				<h4>Listen to our radio appeals</h4>
-				<ul class="media-radios">
-					<% loop MediaRadios %>
-						<li class="media-radio"><a href="$SingleMP3.URL">$Title</a></li>
-					<% end_loop %>
-				</ul>
-				<h4>Our media releases</h4>
-				<ul class="media-releases">
-					<% loop MediaReleases %>
-						<li class="media-release"><a href="$SinglePDF.URL">$Title</a></li>
-					<% end_loop %>
-				</ul>
-				<h4>Visit our links</h4>
-				<ul class="media-links">
-					<% loop MediaLinks %>
-						<li class="media-link"><a href="$URL" target="_blank">$Title</a></li>
-					<% end_loop %>
-				</ul>
-			</div>
 		</div>
-	</div>
-</section>
-<section id="social" class="section social">
-	<div class="container">
-		<h1 class="section-title">$SocialTitle</h1>
-		<h2 class="section-intro">$SocialIntro</h2>
-		<%-- <div class="section-content"></div> --%>
-		<div id="social-stream"></div>
 	</div>
 </section>
 <section id="contact" class="section contact bg">

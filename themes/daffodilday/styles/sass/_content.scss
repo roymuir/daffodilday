@@ -3,6 +3,18 @@ img {
 	height: auto;
 }
 
+a {
+	color: $primary;
+
+	&:hover {
+		color: $darkPrimary;
+	}
+}
+
+p {
+	margin: 0 0 25px;
+}
+
 .hidden {
 	display: none;
 }
@@ -11,15 +23,15 @@ img {
 	padding: 15px 0 80px 0;
 
 	@media (min-width: $screen-sm) {
-		padding: 15px 0 150px 0;
+		padding: 70px 0 100px 0;
 	}
 }
 
 .section {
-	padding: 40px 0;
+	padding: 40px 0 60px;
 
 	@media (min-width: $screen-sm) {
-		padding: 75px 0;
+		padding: 60px 0;
 	}
 
 	&.bg {
@@ -34,9 +46,9 @@ img {
 	margin-top: 0;
 	margin-bottom: 17px;
 
-	/* @media (min-width: $screen-sm) {
-		margin-bottom: 25px;
-	} */
+	@media (min-width: $screen-sm) {
+		margin-bottom: 5px;
+	}
 }
 
 .section-intro {
@@ -44,8 +56,12 @@ img {
 	font-weight: normal;
 	line-height: 30px;
 	text-align: center;
-	margin: 0 auto 58px auto;
+	margin: 0 auto 32px auto;
 	max-width: 700px;
+
+	@media (min-width: $screen-sm) {
+		margin: 0 auto 58px auto;
+	}
 }
 
 .section-content {
@@ -55,113 +71,415 @@ img {
 	}
 }
 
-.media-videos,
-.media-photos,
-.media-photos-thumbnails,
-.media-radios,
-.media-releases,
-.media-links {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0;
-	list-style: none;
+.page-title {
+	margin: 70px 0 30px 0;
 }
 
-.media-video .video-container {
-	position: relative;
-	padding-bottom: 51.75%;
-	padding-top: 25px;
-	height: 0;
-
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+.page-intro {
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 30px;
+	margin-bottom: 25px;
 }
 
-.media-photos-thumbnails {
-	display: none;
+
+// What is daffodil day?
+.section.what {
+	text-align: center;
 
 	@media (min-width: $screen-sm) {
-		display: block;
+		text-align: left;
 	}
 }
 
-.modern.light .stream li { 
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 
-	&.dcsns-twitter a {
-		color: $primary;
+// How we make a difference
+.section.how {
+	@media (min-width: $screen-md) {
+		padding-bottom: 40px;
+	}
 
-		&:hover {
-			color: $secondary;
+	.donations {
+		list-style: none;
+	    padding: 0;
+    	margin-bottom: 0;
+
+    	li:last-child .donation {
+    		margin-bottom: 0;
+    	}
+
+		.donation {
+			text-align: center;
+			background-color: $white;
+			border-top: 5px solid $darkPrimary;
+			border-bottom: 2px solid $secondary;
+			margin-bottom: 30px;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
+			.donation-value {
+				background-color: $primary;
+				color: $white;
+				font-size: 96px;
+				font-weight: bold;
+				letter-spacing: -4px;
+				padding: 3px 0;
+
+				span {
+					font-size: 24px;
+					position: relative;
+					top: -48px;
+					left: -7px;
+				}
+			}
+
+			.donation-description {
+				padding: 20px 13px;
+				
+				@media (min-width: $screen-sm) {
+					min-height: 160px;
+				}
+
+				@media (min-width: $screen-lg) {
+					min-height: 136px;
+				}
+			}
+		}
+	}
+}
+
+
+// Get involved
+.section.involved {
+	padding-bottom: 25px;
+
+	.resp-tabs-list {
+		margin-bottom: 40px;
+
+		li {
+			border: none;
+			background-color: $white !important;
+			text-align: center;
+			margin: 0;
+
+			&.resp-tab-active {
+				.opportunity {
+					background-color: $primary !important;
+					box-shadow: none;
+					color: $white;
+
+					.opportunity-icon {
+						color: $secondary;
+					}
+
+					&:hover {
+						box-shadow: 0 0 0 rgba(0,0,0,0.25);
+					}
+				}
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				.opportunity  {
+					padding-top: 28px;
+
+					.opportunity-icon {
+						font-size:72px;
+					}
+				}
+			}
+
+			&:nth-child(4) {
+				.opportunity  {
+					
+					.opportunity-icon {
+						margin: 10px 0 0;
+					}
+				}
+			}
+
+			.opportunity {
+				border: 1px solid $lightGrey;
+				padding: 20px 0;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
+				.opportunity-icon {
+					font-size: 80px;
+					color: $primary;
+					margin-bottom: 10px;
+				}
+
+				.opportunity-title {
+					font-size: 20px;
+				}
+
+				&:hover {
+					box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+				}
+
+				&:focus,
+				&:active {
+					box-shadow: 0 0 0 rgba(0,0,0,0.25);
+				}
+			}
 		}
 	}
 
-	.section-thumb {
-		margin-bottom: 25px;
+	.resp-tabs-container {
+		text-align: center;
 
-		a {
-			display: block;
+		.resp-tab-content {
+			border: none;
+			background-color: $lightPrimary;
+			position: relative;
+			padding: 30px 20px;
 
-			img {
-				float: none;
+			@media (min-width: $screen-sm) {
+				padding: 40px 40px 30px 40px;
+			}
+
+			h4 {
+				margin-top: 0;
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		@media (min-width: $screen-sm) {
+			.resp-tab-content-active:after {
+				bottom: 100%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				border-bottom-color: $lightPrimary;
+				border-width: 20px;
+				margin-left: -20px;
+			}
+
+			.resp-tab-content-active:nth-child(2):after {
+				left: 9%;
+			}
+
+			.resp-tab-content-active:nth-child(4):after {
+				left: 29%;
+			}
+
+			.resp-tab-content-active:nth-child(6):after {
+				left: 50%;
+			}
+
+			.resp-tab-content-active:nth-child(8):after {
+				left: 71%;
+			}
+
+			.resp-tab-content-active:nth-child(10):after {
+				left: 91%;
+			}
+		}
+	}
+
+	.resp-accordion {
+		font-size: 22px;
+		font-weight: 400;
+		background-color: $white !important;
+		border: 1px solid $lightGrey;
+		margin-bottom: -1px;
+
+		.opportunity-title {
+			display: inline-block;
+			margin-left: 10px;
+		}
+
+		.resp-arrow {
+			margin-top: 6px;
+		}
+	}
+
+	.resp-tab-active {
+		background-color: $primary !important;
+		color: $white;
+
+		.resp-arrow {
+			border-bottom-color: $white;
+		}
+	}
+}
+
+
+// Merchandise
+.section.merchandise {
+	hr {
+		max-width: 700px;
+		border-color: $lightGrey;
+		margin-top: 0;
+		margin-bottom: 80px
+	}
+}
+
+
+// Media
+.section.media {
+	h4 {
+		margin-top: 0;
+		font-size: 18px;
+		font-weight: normal;
+	}
+
+	.media-videos,
+	.media-photos,
+	.media-photos-thumbnails,
+	.media-radios,
+	.media-releases,
+	.media-links {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.media-container {
+		padding: 20px;
+		margin-bottom: 30px;
+
+		&.primary {
+			background-color: $lightPrimary;
+		}
+
+		&.secondary {
+			background-color: $lightSecondary;
+		}
+
+		li {
+			margin: 7px 0;
+
+			&:last-child {
 				margin-bottom: 0;
 			}
 		}
-		
-	}
 
-	.section-text {
-		font-size: initial;
-		line-height: 24px;
-
-		.twitter-user a:hover strong {
-			color: $secondary !important;
+		p:last-child {
+			margin-bottom: 0;
 		}
 	}
 
-	.section-share {
-		text-align: center;
-		float: none;
-		margin-bottom: 25px;
+	.media-video {
+		margin-bottom: 35px;
 
-		a {
-			display: inline-block;
+		.video-container {
+			position: relative;
+			padding-bottom: 51.75%;
+			padding-top: 25px;
+			height: 0;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.video-description {
+			margin-top: 5px;
+		}
+	}
+
+	.media-photos-thumbnails {
+		display: none;
+
+		@media (min-width: $screen-sm) {
+			display: block;
+		}
+	}
+}
+
+
+// Social
+.section.social {
+	.modern.light .stream li {
+		border-top: 5px solid $darkPrimary;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
+		&.dcsns-twitter a {
+			color: $primary;
+
+			&:hover {
+				color: $darkPrimary;
+			}
+		}
+
+		.section-thumb {
+			margin-bottom: 25px;
+
+			a {
+				display: block;
+
+				img {
+					float: none;
+					margin-bottom: 0;
+				}
+			}
+			
+		}
+
+		.section-text {
+			font-size: initial;
+			line-height: 24px;
+
+			.twitter-user a:hover strong {
+				color: $secondary !important;
+			}
+		}
+
+		.section-share {
+			text-align: center;
 			float: none;
+			margin-bottom: 25px;
+
+			a {
+				display: inline-block;
+				float: none;
+			}
 		}
-	}
 
-	.socicon {
-		left: 20px;
-		bottom: 30px;
-		color: $white;
-	}
-
-	.section-intro {
-		background: $primary !important;
-		margin-bottom: 0;
-		padding: 15px 20px 15px 65px;
-		text-align: left;
-		line-height: initial;
-		max-width: none;
-
-		a,
-		span {
+		.socicon {
+			left: 20px;
+			bottom: 30px;
 			color: $white;
-			padding: 0;
 		}
 
-		.link-user {
-			font-size: 14px;
-			margin-bottom: 7px;
-		}
+		.section-intro {
+			background: $primary !important;
+			margin-bottom: 0;
+			padding: 15px 20px 15px 65px;
+			text-align: left;
+			line-height: initial;
+			max-width: none;
 
-		span {
-			font-size: 12px;
+			a,
+			span {
+				color: $white;
+				padding: 0;
+			}
+
+			.link-user {
+				font-size: 14px;
+				margin-bottom: 7px;
+			}
+
+			span {
+				font-size: 12px;
+			}
 		}
 	}
 }

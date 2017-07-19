@@ -20,11 +20,23 @@ $( document ).ready(function() {
 	    var $target = $(target);
 
 	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
+	        'scrollTop': $target.offset().top - 65
 	    }, 900, 'swing', function () {
 	        window.location.hash = target;
 	    });
 	});
+
+	$(document).on("scroll", onScroll);
+
+	function onScroll(event){
+	    var scrollPos = $(document).scrollTop();
+	    $('.section').each(function(i) {
+            if ($(this).position().top <= scrollPos + 70) {
+                $('.nav-items a.active').removeClass('active');
+                $('.nav-items a').eq(i-1).addClass('active');
+            }
+        });
+	}
     
 
 
