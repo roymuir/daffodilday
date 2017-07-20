@@ -1,6 +1,0 @@
----
-name: spamprotection
----
-Form:
-  extensions:
-    - FormSpamProtectionExtension
