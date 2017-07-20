@@ -1,6 +1,124 @@
+.welcome {
+	padding: 40px 0 30px 0;
+
+	@media (min-width: $screen-sm-min) {
+		padding: 80px 0 70px 0;
+	}
+
+	@media (min-width: $screen-md-min) {
+		padding: 90px 0 80px 0;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		padding: 140px 0 130px 0;
+	}
+
+	h1 {
+		font-size: 35px;
+		line-height: 35px;
+		font-weight: 700;
+		color: $white;
+		max-width: 750px;
+		margin: 0 auto 25px auto;
+		text-align: center;
+	    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+
+	    @media (min-width: $screen-md-min) {
+			font-size: 55px;
+			line-height: 55px;
+			max-width: 850px;
+		}
+
+		@media (min-width: $screen-lg-min) {
+			font-size: 65px;
+			line-height: 65px;
+			max-width: 950px;
+		}
+	}
+
+	h2 {
+		font-size: 22px;
+		line-height: 25px;
+		font-weight: 400;
+		color: $white;
+		max-width: 450px;
+		margin: 0 auto 40px auto;
+		text-align: center;
+	    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+
+	    @media (min-width: $screen-md-min) {
+			font-size: 32px;
+			line-height: 36px;
+			max-width: 550px;
+		}
+
+		@media (min-width: $screen-lg-min) {
+			font-size: 38px;
+			line-height: 50px;
+			max-width: 650px;
+		}
+	}
+
+	.button {
+		margin: 0 10px 15px 0;
+	}
+}
+
 .stories {
-	overflow: hidden;
 	padding: 0 30px;
+	background: url('../../images/header-bg.jpg') center 0 no-repeat fixed;
+	background-size: cover;
+	overflow: hidden;
+	/* position: relative; */
+
+	.stories-buttons{
+		display: none;
+		position: absolute;
+		left: 10px;
+		z-index: 99;
+
+		.close,
+		.view-more,
+		.view-less {
+		    font-size: 14px;
+   			padding: 10px 16px 8px;
+   			margin-right: 4px;
+
+   			@media (min-width: $screen-md-min) {
+   				margin-right: 10px;
+   			}
+		}
+
+		.view-less {
+			display: none;
+			margin-right: 0;
+		}
+	}
+
+	.names {
+		display: none;
+		position: relative;
+
+		.col-sm-4 {
+			&:nth-child(3n) {
+				.story-title {
+					font-family: 'Amatic SC', cursive;
+				}
+			}
+
+			&:nth-child(3n+1) {
+				.story-title {
+					font-family: 'Shadows Into Light Two', cursive;
+				}
+			}
+
+			&:nth-child(3n+2) {
+				.story-title {
+					font-family: 'Coming Soon', cursive;
+				}
+			}
+		}
+	}
 
 	.story {
 		position: relative;
@@ -9,22 +127,27 @@
 		text-align: center;
 		margin: 15px 0;
 
-		/* &:first-child,
-		&:nth-child(2) {
-			margin-top: 0;
-
-			@media (min-width: $screen-sm) {
-				margin-top: 15px;
-			}
-		} */
-
 		.front {
-			border: 1px solid #ccc;
+			border: 1px solid rgba(255,255,255,0.2);
+			background-color: rgba(255,255,255,0.1);
+
+			.story-title {
+				font-size: 70px;
+
+				@media (min-width: $screen-ms-min) {
+					font-size: 55px;
+				}
+
+				@media (min-width: $screen-lg-min) {
+					font-size: 70px;
+				}
+			}
 		}
 
 		.back {
-			border: 1px solid #ccc;
 			padding: 15px;
+			border: 1px solid rgba(225,170,7,1);
+			background-color: $secondary; 
 		}
 
 		.story-title,
@@ -35,9 +158,26 @@
 			margin: 0;
 		}
 
-		/* .story-content {
-			width: 100%;
-			padding: 15px;
-		} */
+		.story-content {
+			font-family: 'Coming Soon', cursive;
+			font-size: 14px;
+			color: $black;
+
+			@media (min-width: $screen-ms-min) {
+				font-size: 12px;
+			}
+
+			@media (min-width: $screen-sm-min) {
+				font-size: 12px;
+			}
+
+			@media (min-width: $screen-md-min) {
+				font-size: 16px;
+			}
+
+			@media (min-width: $screen-lg-min) {
+				font-size: 18px;
+			}
+		}
 	}
 }

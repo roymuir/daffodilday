@@ -27,5 +27,25 @@ PaymentProcessor:
       - 'Cheque'
       - 'PaystationThreeParty'
     live:
-      - 'Cheque'
       - 'PaystationThreeParty'
+PaystationGateway_ThreeParty:
+  live:
+    authentication:
+      paystation_id: '613407'
+      gateway_id: 'DAFFODIL'
+    site_description: 
+      'Daffodil Day'
+    verify_ssl_mode:
+      true
+    supported_currencies:
+      'NZD' : 'New Zealand Dollar'
+  dev:
+    authentication:
+      paystation_id: '613407'
+      gateway_id: 'DAFFODIL'
+    site_description: 
+      'Daffodil Day'
+    verify_ssl_mode:
+      false
+    supported_currencies:
+      'NZD' : 'New Zealand Dollar'  

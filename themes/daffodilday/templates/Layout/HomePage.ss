@@ -1,14 +1,27 @@
 <section id="stories" class="section stories">
-	<div class="">
+	<div class="welcome">
+		<h1>$HeaderTitle</h1>
+		<h2>$HeaderSubTitle</h2>
+		<div class="button-container">
+			<a href="" class="button primary view-stories">View their stories</a>
+			<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button secondary">Donate now</a>
+		</div>
+	</div>
+	<div class="stories-buttons">
+		<a href="" class="button primary close">Close</a>
+		<a href="" class="button secondary view-more">View more</a>
+		<a href="" class="button secondary view-less">View less</a>
+	</div>
+	<div class="names">
 		<div class="row">
-			<% loop stories %>
-			    <div class="col-xs-6 col-sm-4 col-md-2">
+			<% loop ReverseStorySort %>
+			    <div class="col-xs-12 col-ms-6 col-sm-4 col-lg-3">
 				    <div class="story">
 				    	<div class="front">
-				    		<h3 class="story-title">$Name</h3>
+				    		<h1 class="story-title">$Name</h3>
 				    	</div>
 				    	<div class="back">
-				    		<p class="story-content">$Story</p>
+				    		<p class="story-content"><span class="quote">"</span>$Story<span class="quote">"</span></p>
 				    	</div>
 			    	</div>
 			    </div>
@@ -20,7 +33,14 @@
 	<div class="container">
 		<h1 class="section-title">$WhatTitle</h1>
 		<h2 class="section-intro">$WhatIntro</h2>
-		<div class="section-content">$WhatContent</div>
+		<div class="row">
+			<div class="col-sm-6">
+				$WhatContent
+			</div>
+			<div class="col-sm-6">
+				$WhatContentTwo
+			</div>
+		</div>
 	</div>
 </section>
 <section id="how" class="section how bg">
@@ -78,11 +98,11 @@
 	            <% end_loop %>
 	        </div>
         </div>
+        <hr>
 	</div>
 </section>
 <section id="merchandise" class="section merchandise">
 	<div class="container">
-		<hr>
 		<h1 class="section-title">$MerchandiseTitle</h1>
 		<h2 class="section-intro">$MerchandiseIntro</h2>
 		<div class="button-container"><a class="button secondary" href="/store">Visit Store</a></div>
@@ -153,17 +173,19 @@
 			<div class="col-sm-9 col-sm-offset-1-5">
 				<h4>View our gallery</h4>
 				<ul class="media-photos">
-					<% loop MediaPhotos %>
+					<% loop ReverseSort %>
 					    <li class="media-photo">
 					    	$SingleImage.CroppedImage(847,530)
-					    	$Caption
+					    	<% if Caption %>
+					    	    <div class="media-photo-caption">$Caption</div>
+					    	<% end_if %>
 					    </li>
 					<% end_loop %>
 				</ul>
 				<ul class="media-photos-thumbnails">
-					<% loop MediaPhotos %>
+					<% loop ReverseSort %>
 					    <li class="media-photo-thumbnail">
-					    	$SingleImage.CroppedImage(100,63)
+					    	$SingleImage.CroppedImage(105,70)
 					    </li>
 					<% end_loop %>
 				</ul>

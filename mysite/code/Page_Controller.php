@@ -32,12 +32,15 @@ class Page_Controller extends ContentController
         Requirements::javascript('https://use.fontawesome.com/9744a1a4db.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.wall.1.8.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.social.stream.1.6.2.min.js');
+        Requirements::javascript($this->ThemeDir().'/scripts/libs/jquery.mCustomScrollbar.concat.min.js');
         Requirements::javascript($this->ThemeDir().'/scripts/libs/easyResponsiveTabs.js');
         Requirements::javascript($this->ThemeDir().'/scripts/main.js');
         Requirements::css('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i');
+        Requirements::css('https://fonts.googleapis.com/css?family=Amatic+SC|Coming+Soon|Handlee|Shadows+Into+Light+Two');
         Requirements::css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
         Requirements::css($this->ThemeDir().'/styles/css/libs/dcsns_wall.css');
         Requirements::css($this->ThemeDir().'/styles/css/libs/easy-responsive-tabs.css');
+        Requirements::css($this->ThemeDir().'/styles/css/libs/jquery.mCustomScrollbar.min.css');
         Requirements::css($this->ThemeDir().'/styles/css/main.css');
     }
 

@@ -4,9 +4,11 @@ class HomePage extends Page
 {
     private static $db = array(
     	'HeaderTitle' => 'Text',
+    	'HeaderSubTitle' => 'Text',
     	'WhatTitle' => 'Text',
     	'WhatIntro' => 'Text',
     	'WhatContent' => 'HTMLText',
+    	'WhatContentTwo' => 'HTMLText',
     	'DifferenceTitle' => 'Text',
     	'DifferenceIntro' => 'Text',
     	'InvolvedTitle' => 'Text',
@@ -22,8 +24,7 @@ class HomePage extends Page
     	'ContactIntro' => 'Text'
     );
 
-    private static $has_one = array(
-		'BackgroundImage' => 'Image'
+    private static $has_one = array(	
 	);
 
     private static $has_many = array(
@@ -42,15 +43,14 @@ class HomePage extends Page
 
 		$fields->removeByName('Content');
 
-		$fields->addFieldToTab('Root.Header', new TextField('HeaderTitle', 'Title'));
-		$fields->addFieldToTab('Root.Header', $imageUploadField = new UploadField('BackgroundImage', 'Background Image'));
-		$imageUploadField->setFolderName('header-background');
+		$fields->addFieldToTab('Root.Header', new TextField('HeaderTitle', 'Main title'));
+		$fields->addFieldToTab('Root.Header', new TextField('HeaderSubTitle', 'Secondary title'));
 		$StoryConfig = GridFieldConfig::create()->addComponents(
 			new GridFieldToolbarHeader(),
 			new GridFieldAddNewButton('toolbar-header-right'),
 			new GridFieldSortableHeader(),
 			new GridFieldDataColumns(),
-			new GridFieldPaginator(10),
+			new GridFieldPaginator(12),
 			new GridFieldEditButton(),
 			new GridFieldDeleteAction(),
 			new GridFieldDetailForm(),
@@ -61,7 +61,8 @@ class HomePage extends Page
 
 		$fields->addFieldToTab('Root.What Is Daffodil Day?', new TextField('WhatTitle', 'Title'));
 		$fields->addFieldToTab('Root.What Is Daffodil Day?', new TextareaField('WhatIntro', 'Intro'));
-		$fields->addFieldToTab('Root.What Is Daffodil Day?', new HTMLEditorField('WhatContent', 'Content'));
+		$fields->addFieldToTab('Root.What Is Daffodil Day?', new HTMLEditorField('WhatContent', 'Column one'));
+		$fields->addFieldToTab('Root.What Is Daffodil Day?', new HTMLEditorField('WhatContentTwo', 'Column two'));
 
 		$fields->addFieldToTab('Root.How We Make A Difference', new TextField('DifferenceTitle', 'Title'));
 		$fields->addFieldToTab('Root.How We Make A Difference', new TextareaField('DifferenceIntro', 'Intro'));
@@ -98,35 +99,12 @@ class HomePage extends Page
 		$fields->addFieldToTab('Root.Merchandise', new TextField('MerchandiseTitle', 'Title'));
 		$fields->addFieldToTab('Root.Merchandise', new TextareaField('MerchandiseIntro', 'Intro'));
 
+		$fields->addFieldToTab('Root.Social', new TextField('SocialTitle', 'Title'));
+		$fields->addFieldToTab('Root.Social', new TextareaField('SocialIntro', 'Intro'));
+
 		$fields->addFieldToTab('Root.Media', new TextField('MediaTitle', 'Title'));
 		$fields->addFieldToTab('Root.Media', new TextareaField('MediaIntro', 'Intro'));
 		$fields->addFieldToTab('Root.Media', new HTMLEditorField('MediaEnquiries', 'Media enquiries'));
-		$VideoConfig = GridFieldConfig::create()->addComponents(
-			new GridFieldToolbarHeader(),
-			new GridFieldAddNewButton('toolbar-header-right'),
-			new GridFieldSortableHeader(),
-			new GridFieldDataColumns(),
-			new GridFieldPaginator(10),
-			new GridFieldEditButton(),
-			new GridFieldDeleteAction(),
-			new GridFieldDetailForm(),
-			new GridFieldOrderableRows('SortID')
-		);
-		$MediaVideos = new GridField('MediaVideos', 'Videos', $this->MediaVideos(), $VideoConfig);
-		$fields->addFieldToTab('Root.Media', $MediaVideos);
-		$RadioConfig = GridFieldConfig::create()->addComponents(
-			new GridFieldToolbarHeader(),
-			new GridFieldAddNewButton('toolbar-header-right'),
-			new GridFieldSortableHeader(),
-			new GridFieldDataColumns(),
-			new GridFieldPaginator(10),
-			new GridFieldEditButton(),
-			new GridFieldDeleteAction(),
-			new GridFieldDetailForm(),
-			new GridFieldOrderableRows('SortID')
-		);
-		$MediaRadios = new GridField('MediaRadios', 'Radio appeals', $this->MediaRadios(), $RadioConfig);
-		$fields->addFieldToTab('Root.Media', $MediaRadios);
 		$MediaReleaseConfig = GridFieldConfig::create()->addComponents(
 			new GridFieldToolbarHeader(),
 			new GridFieldAddNewButton('toolbar-header-right'),
@@ -153,6 +131,32 @@ class HomePage extends Page
 		);
 		$MediaLinks = new GridField('MediaLinks', 'Links', $this->MediaLinks(), $LinkConfig);
 		$fields->addFieldToTab('Root.Media', $MediaLinks);
+		$RadioConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaRadios = new GridField('MediaRadios', 'Radio appeals', $this->MediaRadios(), $RadioConfig);
+		$fields->addFieldToTab('Root.Media', $MediaRadios);
+		$VideoConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(10),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldOrderableRows('SortID')
+		);
+		$MediaVideos = new GridField('MediaVideos', 'Videos', $this->MediaVideos(), $VideoConfig);
+		$fields->addFieldToTab('Root.Media', $MediaVideos);
 		$PhotoConfig = GridFieldConfig::create()->addComponents(
 			new GridFieldToolbarHeader(),
 			new GridFieldAddNewButton('toolbar-header-right'),
@@ -166,9 +170,6 @@ class HomePage extends Page
 		);
 		$MediaPhotos = new GridField('MediaPhotos', 'Photos', $this->MediaPhotos(), $PhotoConfig);
 		$fields->addFieldToTab('Root.Media', $MediaPhotos);
-
-		$fields->addFieldToTab('Root.Social', new TextField('SocialTitle', 'Title'));
-		$fields->addFieldToTab('Root.Social', new TextareaField('SocialIntro', 'Intro'));
 
 		$fields->addFieldToTab('Root.Contact', new TextField('ContactTitle', 'Title'));
 		$fields->addFieldToTab('Root.Contact', new TextareaField('ContactIntro', 'Intro'));

@@ -1,40 +1,38 @@
 <nav class="main-nav" id="nav">
 	<div class="container">
-		<div class="row">
-			<div class="logo col-xs-9 col-lg-2">
-				<a href="/">
-				<img src="$ThemeDir/images/daffodil-day-logo.png" width="170" height="60" alt="Daffodil Day">
-				</a>
+		<div class="logo">
+			<a href="/">
+			<img src="$ThemeDir/images/dd-anz-logo.png" width="215" height="53" alt="Daffodil Day and ANZ">
+			</a>
+		</div>
+		<div class="desktop-menu">
+			<ul class="nav-items">
+				<li><a href="/#what" <% if URLSegment == home %>class="scroll-link"<% end_if %>><%-- <% with $Page(home) %>$WhatTitle<% end_with %> --%>About</a></li>
+				<li><a href="/#how" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$DifferenceTitle<% end_with %></a></li>
+				<li><a href="/#involved" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$InvolvedTitle<% end_with %></a></li>
+				<li><a href="/#merchandise" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$MerchandiseTitle<% end_with %></a></li>
+				<li><a href="/#social" <% if URLSegment == home %>class="scroll-link"<% end_if %>><%-- <% with $Page(home) %>$SocialTitle<% end_with %> --%>Social</a></li>
+				<li><a href="/#media" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$MediaTitle<% end_with %></a></li>
+				<li><a href="/#contact" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$ContactTitle<% end_with %></a></li>
+				<li><a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button secondary">Donate</a></li>
+			</ul>
+		</div>
+		<div class="mobile-menu">
+			<div id="menu-button">
+		  		<a href="#">Menu</a>
 			</div>
-			<div class="desktop-menu col-xs-10">
-				<ul class="nav-items">
-					<li><a href="#what" class="scroll-link"><% with $Page(home) %>$WhatTitle<% end_with %></a></li>
-					<li><a href="#how" class="scroll-link"><% with $Page(home) %>$DifferenceTitle<% end_with %></a></li>
-					<li><a href="#involved" class="scroll-link"><% with $Page(home) %>$InvolvedTitle<% end_with %></a></li>
-					<li><a href="#merchandise" class="scroll-link"><% with $Page(home) %>$MerchandiseTitle<% end_with %></a></li>
-					<li><a href="#social" class="scroll-link"><% with $Page(home) %>$SocialTitle<% end_with %></a></li>
-					<li><a href="#media" class="scroll-link"><% with $Page(home) %>$MediaTitle<% end_with %></a></li>
-					<li><a href="#contact" class="scroll-link"><% with $Page(home) %>$ContactTitle<% end_with %></a></li>
-					<li><a href="#" class="button secondary">Donate</a></li>
-				</ul>
-			</div>
-			<div class="mobile-menu col-xs-3 col-lg-10">
-				<div id="menu-button">
-			  		<a href="#">Menu</a>
-				</div>
-				<div class="overlay overlay-data">
-			  		<a href="" class="overlay-close">CLOSE</a>
-				    <ul>
-						<li><a href="/" class="scroll-link">Home</a></li>
-						<li><a href="#what" class="scroll-link"><% with $Page(home) %>$WhatTitle<% end_with %></a></li>
-						<li><a href="#how" class="scroll-link"><% with $Page(home) %>$DifferenceTitle<% end_with %></a></li>
-						<li><a href="#involved" class="scroll-link"><% with $Page(home) %>$InvolvedTitle<% end_with %></a></li>
-						<li><a href="#merchandise" class="scroll-link"><% with $Page(home) %>$MerchandiseTitle<% end_with %></a></li>
-						<li><a href="#social" class="scroll-link"><% with $Page(home) %>$SocialTitle<% end_with %></a></li>
-						<li><a href="#media" class="scroll-link"><% with $Page(home) %>$MediaTitle<% end_with %></a></li>
-						<li><a href="#contact" class="scroll-link"><% with $Page(home) %>$ContactTitle<% end_with %></a></li>
-				    </ul>
-				</div>
+			<div class="overlay overlay-data">
+		  		<a href="" class="overlay-close">CLOSE</a>
+			    <ul>
+					<li><a href="/#what" <% if URLSegment == home %>class="scroll-link"<% end_if %>><%-- <% with $Page(home) %>$WhatTitle<% end_with %> --%>About</a></li>
+					<li><a href="/#how" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$DifferenceTitle<% end_with %></a></li>
+					<li><a href="/#involved" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$InvolvedTitle<% end_with %></a></li>
+					<li><a href="/#merchandise" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$MerchandiseTitle<% end_with %></a></li>
+					<li><a href="/#social" <% if URLSegment == home %>class="scroll-link"<% end_if %>><%-- <% with $Page(home) %>$SocialTitle<% end_with %> --%>Social</a></li>
+					<li><a href="/#media" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$MediaTitle<% end_with %></a></li>
+					<li><a href="/#contact" <% if URLSegment == home %>class="scroll-link"<% end_if %>><% with $Page(home) %>$ContactTitle<% end_with %></a></li>
+					<li><a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">Donate</a></li>
+			    </ul>
 			</div>
 		</div>
 	</div>
