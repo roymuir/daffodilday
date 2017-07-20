@@ -15,7 +15,9 @@
 		"silverstripe/recaptcha": "^2.0",
 		"swipestripe/swipestripe": "^2.1",
 		"frankmullenger/payment-cheque": "dev-master",
-		"swipestripe/swipestripe-flatfeeshipping": "dev-master"
+		"swipestripe/swipestripe-flatfeeshipping": "dev-master",
+		"silverstripe/payment": "dev-master",
+		"swipestripe/swipestripe-addresses": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7@stable"
