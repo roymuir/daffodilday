@@ -2747,7 +2747,7 @@ input[type="button"].btn-block {
       .overlay ul li a {
         text-decoration: none;
         font-size: 20px;
-        padding: 15px 0; }
+        padding: 11px 0; }
       .overlay ul li:last-child a {
         color: #FFC107; }
   .overlay .overlay-close {
@@ -2845,7 +2845,12 @@ p {
 .page-title,
 .cart > h2,
 .checkout > h2 {
-  margin: 70px 0 30px 0; }
+  margin: 30px 0 20px 0; }
+  @media (min-width: 768px) {
+    .page-title,
+    .cart > h2,
+    .checkout > h2 {
+      margin: 70px 0 30px 0; } }
 
 .page-intro {
   font-size: 20px;

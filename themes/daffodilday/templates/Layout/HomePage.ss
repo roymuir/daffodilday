@@ -14,7 +14,7 @@
 	</div>
 	<div class="names">
 		<div class="row">
-			<% loop ReverseStorySort %>
+			<% loop stories %>
 			    <div class="col-xs-12 col-ms-6 col-sm-4 col-lg-3">
 				    <div class="story">
 				    	<div class="front">
@@ -173,7 +173,7 @@
 			<div class="col-sm-9 col-sm-offset-1-5">
 				<h4>View our gallery</h4>
 				<ul class="media-photos">
-					<% loop ReverseSort %>
+					<% loop ReverseMediaPhotoSort %>
 					    <li class="media-photo">
 					    	$SingleImage.CroppedImage(847,530)
 					    	<% if Caption %>
@@ -183,7 +183,7 @@
 					<% end_loop %>
 				</ul>
 				<ul class="media-photos-thumbnails">
-					<% loop ReverseSort %>
+					<% loop ReverseMediaPhotoSort %>
 					    <li class="media-photo-thumbnail">
 					    	$SingleImage.CroppedImage(105,70)
 					    </li>
