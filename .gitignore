@@ -7,7 +7,12 @@
 /silverstripe-cache/
 /sortablegridfield/
 /spamprotection/
-/recaptcha/
+/payment/
+/payment-cheque/
+/payment-paystation/
+/swipestripe-addresses/
+/swipestripe-flatfeeshipping/
+/swipestripe/
 /mysite/_configDB.php
 _ss_environment.php
 *.orig
