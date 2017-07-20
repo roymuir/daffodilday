@@ -6,6 +6,8 @@
 /install/
 /silverstripe-cache/
 /sortablegridfield/
+/spamprotection/
+/recaptcha/
 /mysite/_configDB.php
 _ss_environment.php
 *.orig
