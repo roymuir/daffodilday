@@ -4,7 +4,7 @@
 		<h2>$HeaderSubTitle</h2>
 		<div class="button-container">
 			<a href="" class="button primary view-stories">View their stories</a>
-			<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button secondary">Donate now</a>
+			<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button dark-primary">Donate now</a>
 		</div>
 	</div>
 	<div class="stories-buttons">
@@ -52,14 +52,14 @@
 				<% if $Pos = 5 %>
 				    <li class="col-sm-4 col-md-3 col-md-offset-1-5">
 				    	<div class="donation">
-							<div class="donation-value">$Value</div>
+							<div class="donation-value"><span>$</span>$Value</div>
 							<div class="donation-description">$Description</div>
 						</div>
 					</li>
 				<% else_if $Pos = 7 %>
 				    <li class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-0">
 				    	<div class="donation">
-							<div class="donation-value">$Value</div>
+							<div class="donation-value"><span>$</span>$Value</div>
 							<div class="donation-description">$Description</div>
 						</div>
 					</li>
