@@ -16,7 +16,6 @@
 		"swipestripe/swipestripe": "^2.1",
 		"frankmullenger/payment-cheque": "dev-master",
 		"swipestripe/swipestripe-flatfeeshipping": "dev-master",
-		"silverstripe/payment": "dev-master",
 		"swipestripe/swipestripe-addresses": "dev-master"
 	},
 	"require-dev": {
