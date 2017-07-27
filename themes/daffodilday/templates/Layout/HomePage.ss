@@ -4,7 +4,7 @@
 		<h2>$HeaderSubTitle</h2>
 		<div class="button-container">
 			<a href="" class="button primary view-stories">View their stories</a>
-			<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button dark-primary">Donate now</a>
+			<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank" class="button white">Donate now</a>
 		</div>
 	</div>
 	<div class="stories-buttons">

@@ -9,6 +9,11 @@
  */
 class PaystationProcessor_ThreeParty extends PaymentProcessor {
 
+  private static $allowed_actions = array(
+    'complete',
+    'capture'
+  );
+
   /**
    * Process the payment, first authorising payment and saving transaction ID, then redirecting user
    * to Paystation to enter cc details etc.

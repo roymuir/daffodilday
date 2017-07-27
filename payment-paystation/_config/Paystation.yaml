@@ -29,3 +29,7 @@ PaystationGateway_ThreeParty:
       true
     lookup_url:
       'https://www.paystation.co.nz/lookup/quick/'
+
+Director:
+  rules:
+    'PaystationProcessor_ThreeParty': 'PaystationProcessor_ThreeParty'      

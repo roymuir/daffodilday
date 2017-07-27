@@ -2492,6 +2492,10 @@ input[type="button"].btn-block {
   background: #0a4281;
   color: #FFF; }
 
+.button.white {
+  background: #FFF;
+  color: #0a4e9b; }
+
 .button.secondary,
 .action,
 .sws .action {
