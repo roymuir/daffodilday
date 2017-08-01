@@ -29,6 +29,12 @@
 		</div>
 	</div>
 </section>
+<section class="section daffodil">
+	<div class="container">
+	<img src="$ThemeDir/images/daffodil.png" width="200" height="233" alt="Daffodil Day">
+		<h1><span>Daffodil Day</span> 27 August 2017</h1>
+	</div>
+</section>
 <section id="what" class="section what">
 	<div class="container">
 		<h1 class="section-title">$WhatTitle</h1>
