@@ -53,8 +53,21 @@ class HomePage_Controller extends Page_Controller {
     }
 
     public function submit($data, $form) { 
-        $adminEmail = new Email(); 
-        $adminEmail->setTo('admin@cancer.org.nz'); 
+        $adminEmail = new Email();
+        if ($data['NearestRegion'] == 'Auckland / Northland') {
+            $adminEmail->setTo('events@akcansoc.org.nz'); 
+        } else if ($data['NearestRegion'] == 'Waikato / Bay of Plenty') {
+            $adminEmail->setTo('fundraising@cancersociety.org.nz'); 
+        } else if ($data['NearestRegion'] == 'Central (Poverty Bay, Hawkes Bay, Taranaki, Manawatu & Surrounds)') {
+            $adminEmail->setTo('mail@cancercd.org.nz'); 
+        } else if ($data['NearestRegion'] == 'Wellington / Nelson / Tasman / Marlborough / Wairarapa') {
+            $adminEmail->setTo('daffodilday@cancersoc.org.nz'); 
+        } else if ($data['NearestRegion'] == 'Canterbury / West Coast') {
+            $adminEmail->setTo('daffodilday@cancercwc.org.nz'); 
+        } else if ($data['NearestRegion'] == 'Otago / Southland') {
+            $adminEmail->setTo('daffodilday@cansoc.org.nz'); 
+        }
+        //$adminEmail->setTo('admin@cancer.org.nz'); 
         $adminEmail->setFrom($data['Email']); 
         $adminEmail->setSubject("Contact message from {$data["Name"]} via the Daffodil Day website"); 
         $adminMessageBody = " 

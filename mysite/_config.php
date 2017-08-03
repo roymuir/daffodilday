@@ -10,4 +10,5 @@ require_once('conf/ConfigureFromEnv.php');
 i18n::set_locale('en_GB');
 
 // load extensions
+Object::add_extension('SiteConfig', 'SiteConfigExtension');
 Object::add_extension('Product', 'ProductExtension');

@@ -32,7 +32,7 @@
 <section class="section daffodil">
 	<div class="container">
 	<img src="$ThemeDir/images/daffodil.png" width="200" height="233" alt="Daffodil Day">
-		<h1><span>Daffodil Day</span> 27 August 2017</h1>
+		<h1><span>Daffodil Day</span> <% if SiteConfig.DaffodilDay %>$SiteConfig.DaffodilDay<% else %>25 August 2017<% end_if %></h1>
 	</div>
 </section>
 <section id="what" class="section what">
