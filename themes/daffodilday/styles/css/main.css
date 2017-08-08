@@ -2937,8 +2937,12 @@ p {
     margin-bottom: 0; }
   .section.how .donations a {
     color: initial; }
-    .section.how .donations a:hover {
+    .section.how .donations a:hover, .section.how .donations a:focus {
       text-decoration: none; }
+      .section.how .donations a:hover .donation .donation-value, .section.how .donations a:focus .donation .donation-value {
+        color: #0a4e9b; }
+      .section.how .donations a:hover .donation .donation-value .donation-circle, .section.how .donations a:focus .donation .donation-value .donation-circle {
+        background-color: #FFC107; }
   .section.how .donations .donation {
     text-align: center;
     background-color: #FFF;
@@ -2948,12 +2952,28 @@ p {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); }
     .section.how .donations .donation .donation-value {
-      background-color: #0a4e9b;
+      -webkit-transition: all 0.05s ease-out;
+      transition: all 0.05s ease-out;
       color: #FFF;
       font-size: 96px;
       font-weight: bold;
       letter-spacing: -4px;
-      padding: 3px 0; }
+      margin: 20px 20% 0 20%; }
+      @media (min-width: 768px) {
+        .section.how .donations .donation .donation-value {
+          margin: 20px 10px 0 10px; } }
+      @media (min-width: 1200px) {
+        .section.how .donations .donation .donation-value {
+          margin: 20px 20px 0 20px; } }
+      .section.how .donations .donation .donation-value .donation-circle {
+        -webkit-transition: all 0.1s ease-out;
+        transition: all 0.1s ease-out;
+        background-color: #0a4e9b;
+        border-radius: 50%;
+        padding: 50% 0;
+        background-color: #0a4e9b;
+        height: 0;
+        line-height: 10px; }
       .section.how .donations .donation .donation-value span {
         font-size: 24px;
         position: relative;
@@ -3057,7 +3077,8 @@ p {
     font-weight: 400;
     background-color: #FFF !important;
     border: 1px solid #BDBDBD;
-    margin-bottom: -1px; }
+    margin-bottom: -1px;
+    padding: 20px 15px !important; }
     .section.involved .resp-accordion .opportunity-title {
       display: inline-block;
       margin-left: 10px; }

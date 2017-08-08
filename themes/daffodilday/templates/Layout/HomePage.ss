@@ -59,7 +59,7 @@
 				    <li class="col-sm-4 col-md-3 col-md-offset-1-5">
 				    	<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
 					    	<div class="donation">
-								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-value"><div class="donation-circle"><span>$</span>$Value</div></div>
 								<div class="donation-description">$Description</div>
 							</div>
 						</a>
@@ -68,7 +68,7 @@
 				    <li class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-0">
 				    	<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
 					    	<div class="donation">
-								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-value"><div class="donation-circle"><span>$</span>$Value</div></div>
 								<div class="donation-description">$Description</div>
 							</div>
 						</a>
@@ -77,7 +77,7 @@
 					<li class="col-sm-4 col-md-3">
 						<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
 					    	<div class="donation">
-								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-value"><div class="donation-circle"><span>$</span>$Value</div></div>
 								<div class="donation-description">$Description</div>
 							</div>
 						</a>

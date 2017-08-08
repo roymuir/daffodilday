@@ -196,8 +196,17 @@ p {
     	a {
     		color: initial;
 
-    		&:hover{
+    		&:hover,
+    		&:focus {
     			text-decoration: none;
+
+    			.donation .donation-value {
+    				color: $primary;
+    			}
+
+    			.donation .donation-value .donation-circle {
+    				background-color: $secondary;
+    			}
     		}
     	}
 
@@ -210,12 +219,30 @@ p {
 			box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 
 			.donation-value {
-				background-color: $primary;
+				transition: all 0.05s ease-out;
 				color: $white;
 				font-size: 96px;
 				font-weight: bold;
 				letter-spacing: -4px;
-				padding: 3px 0;
+			    margin: 20px 20% 0 20%;
+
+			    @media (min-width: $screen-sm) {
+					margin: 20px 10px 0 10px;
+				}
+
+				@media (min-width: $screen-lg) {
+					margin: 20px 20px 0 20px;
+				}
+
+			    .donation-circle {
+			    	transition: all 0.1s ease-out;
+			    	background-color: $primary;
+		    	    border-radius: 50%;
+					padding: 50% 0;
+					background-color: #0a4e9b;
+					height: 0;
+					line-height: 10px;
+			    }
 
 				span {
 					font-size: 24px;
@@ -388,6 +415,7 @@ p {
 		background-color: $white !important;
 		border: 1px solid $lightGrey;
 		margin-bottom: -1px;
+		padding: 20px 15px !important;
 
 		.opportunity-title {
 			display: inline-block;
