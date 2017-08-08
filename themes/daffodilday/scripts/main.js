@@ -198,7 +198,7 @@ $( document ).ready(function() {
 			feeds: {
 				twitter: {
 					url: '/themes/daffodilday/php/twitter.php',
-					id: 'NZCancerSo,DaffodilDay_NZ,#daffodilday'
+					id: 'DaffodilDay_NZ,#daffodilday'
 				},
 				facebook: {
 					url: '/themes/daffodilday/php/facebook.php',
