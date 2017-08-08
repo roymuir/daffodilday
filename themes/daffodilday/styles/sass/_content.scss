@@ -193,6 +193,14 @@ p {
     		margin-bottom: 0;
     	}
 
+    	a {
+    		color: initial;
+
+    		&:hover{
+    			text-decoration: none;
+    		}
+    	}
+
 		.donation {
 			text-align: center;
 			background-color: $white;

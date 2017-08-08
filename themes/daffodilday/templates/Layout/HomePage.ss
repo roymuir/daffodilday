@@ -57,24 +57,30 @@
 			<% loop Donations %>
 				<% if $Pos = 5 %>
 				    <li class="col-sm-4 col-md-3 col-md-offset-1-5">
-				    	<div class="donation">
-							<div class="donation-value"><span>$</span>$Value</div>
-							<div class="donation-description">$Description</div>
-						</div>
+				    	<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
+					    	<div class="donation">
+								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-description">$Description</div>
+							</div>
+						</a>
 					</li>
 				<% else_if $Pos = 7 %>
 				    <li class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-0">
-				    	<div class="donation">
-							<div class="donation-value"><span>$</span>$Value</div>
-							<div class="donation-description">$Description</div>
-						</div>
+				    	<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
+					    	<div class="donation">
+								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-description">$Description</div>
+							</div>
+						</a>
 					</li>
 				<% else %>
 					<li class="col-sm-4 col-md-3">
-				    	<div class="donation">
-							<div class="donation-value"><span>$</span>$Value</div>
-							<div class="donation-description">$Description</div>
-						</div>
+						<a href="https://give.paystation.co.nz/cancer-society/donatepopup.php" target="_blank">
+					    	<div class="donation">
+								<div class="donation-value"><span>$</span>$Value</div>
+								<div class="donation-description">$Description</div>
+							</div>
+						</a>
 					</li>
 				<% end_if %>
 			<% end_loop %>

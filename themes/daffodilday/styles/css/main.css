@@ -2935,6 +2935,10 @@ p {
   margin-bottom: 0; }
   .section.how .donations li:last-child .donation {
     margin-bottom: 0; }
+  .section.how .donations a {
+    color: initial; }
+    .section.how .donations a:hover {
+      text-decoration: none; }
   .section.how .donations .donation {
     text-align: center;
     background-color: #FFF;
