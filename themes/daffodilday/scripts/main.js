@@ -205,7 +205,6 @@ $( document ).ready(function() {
 					id: '174949225876112'
 				},
 				instagram: {
-					//accessToken :'186786085.cac0b53.d6447ce3eb9f4570a150fd20ff98bf10'
 					accessToken: '186786085.cac0b53.d6447ce3eb9f4570a150fd20ff98bf10',
 					clientId: '7d860cf2da6b436a9ff9f7feb727f58e',
 					id: '#daffodilday'  /*!2233965950,*/
