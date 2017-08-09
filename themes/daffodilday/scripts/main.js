@@ -198,18 +198,18 @@ $( document ).ready(function() {
 			feeds: {
 				twitter: {
 					url: '/themes/daffodilday/php/twitter.php',
-					id: 'DaffodilDay_NZ,#daffodilday'
+					id: 'DaffodilDay_NZ,#daffodilday-from:DaffodilDay_NZ'
 				},
 				facebook: {
 					url: '/themes/daffodilday/php/facebook.php',
 					id: '174949225876112'
-				}/*,
+				},
 				instagram: {
 					//accessToken :'186786085.cac0b53.d6447ce3eb9f4570a150fd20ff98bf10'
 					accessToken: '186786085.cac0b53.d6447ce3eb9f4570a150fd20ff98bf10',
 					clientId: '7d860cf2da6b436a9ff9f7feb727f58e',
-					id: '!2233965950,#love'
-				}*/
+					id: '#daffodilday'  /*!2233965950,*/
+				}
 			},
 			style: {
 				layout: 'modern'
